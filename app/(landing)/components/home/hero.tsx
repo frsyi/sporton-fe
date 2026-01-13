@@ -14,9 +14,21 @@ const HeroSection = () => {
           className="grayscale absolute left-0 -top-20"
         />
         <div className="relative ml-40 w-full">
-          <div className="text-primary italic">Friday Sale, 50%</div>
-          <h1 className="text-[95px] font-extrabold italic bg-gradient-to-b leading-tight from-black to-[#979797] bg-clip-text text-transparent">
-            WEAR YOUR <br /> TOP QUALITY <br /> SPORTWEAR
+          <div
+            className="inline-flex items-center
+             px-3 py-2
+             mb-2
+             bg-[#FF5F3F]/10
+             rounded-full
+             self-start"
+          >
+            <span className="text-primary italic text-sm">
+              Friday Sale, 50%
+            </span>
+          </div>
+
+          <h1 className="text-[95px] font-extrabold italic bg-linear-to-b leading-tight from-black to-[#979797] bg-clip-text text-transparent">
+            WEAR YOUR <br /> TOP-QUALITY <br /> SPORTSWEAR
           </h1>
           <p className="w-1/2 mt-10 leading-loose">
             Engineered for endurance and designed for speed. Experience gear
@@ -25,7 +37,7 @@ const HeroSection = () => {
           </p>
           <div className="flex gap-5 mt-14">
             <Button>
-              Explore Here <FiFastForward />
+              Explore More <FiFastForward />
             </Button>
             <Button variant="ghost">
               Watch Video{""}
@@ -38,7 +50,6 @@ const HeroSection = () => {
             </Button>
           </div>
         </div>
-        z
         <Image
           src="/images/img-hero.png"
           alt="image sporton hero"
@@ -52,7 +63,7 @@ const HeroSection = () => {
         alt="image sporton"
         width={420}
         height={420}
-        className="absolute -right-[200px] top-1/2 -translate-y-1/2"
+        className="absolute -right-50 top-1/2 -translate-y-1/2"
       />
     </section>
   );

@@ -13,7 +13,7 @@ const productList = [
   {
     name: "SportsOn Rockets Tennis",
     category: "Tennis",
-    price: 99000,
+    price: 999000,
     imgUrl: "product-2.png",
   },
   {
@@ -37,7 +37,7 @@ const productList = [
   {
     name: "Sporton Basketball",
     category: "Basketball",
-    price: 65000,
+    price: 650000,
     imgUrl: "product-6.png",
   },
   {
@@ -58,7 +58,7 @@ const ProductsSection = () => {
   return (
     <section id="products-section" className="container mx-auto mt-32">
       <h2 className="font-bold italic text-4xl text-center mb-11">
-        <span className="text-primary">OUR</span>PRODUCTS
+        <span className="text-primary">OUR </span>PRODUCTS
       </h2>
 
       <div className="grid grid-cols-4 gap-5">
@@ -68,7 +68,7 @@ const ProductsSection = () => {
             key={index}
             className="p-1.5 bg-white hover:drop-shadow-xl duration-300"
           >
-            <div className="bg-primary-light aspect-square w-full justify-center items-center relative">
+            <div className="bg-primary-light aspect-square w-full flex justify-center items-center relative">
               <Image
                 src={`/images/products/${product.imgUrl}`}
                 alt={product.name}

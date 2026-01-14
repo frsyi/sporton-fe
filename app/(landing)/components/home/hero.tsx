@@ -4,7 +4,7 @@ import { FiFastForward } from "react-icons/fi";
 
 const HeroSection = () => {
   return (
-    <section id="hero-section" className="container mx-auto h-screen flex">
+    <section id="hero-section" className="container mx-auto min-h-screen flex">
       <div className="relative self-center">
         <Image
           src="/images/img-basketball.png"
@@ -63,7 +63,7 @@ const HeroSection = () => {
         alt="image sporton"
         width={420}
         height={420}
-        className="absolute -right-50 top-1/2 -translate-y-1/2"
+        className="absolute -right-50 top-1/2 -translate-y-1/2 max-h-[85vh]"
       />
     </section>
   );

@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiSearch, FiShoppingBag, FiMenu, FiX } from "react-icons/fi";
 import { useState } from "react";
+import CartPopup from "../ui/cart-popup";
 
 const Header = () => {
+  const [isCartPopupOpen, setIsCartPopupOpen] = useState(false);
   const [open, setOpen] = useState(false);
 
   return (
@@ -28,14 +30,19 @@ const Header = () => {
           <Link href="#">Explore Products</Link>
         </nav>
 
-        <div className="flex items-center gap-10">
+        <div className="relative flex items-center gap-10">
           <FiSearch size={24} />
-          <div className="relative">
+          <div
+            className="relative cursor-pointer"
+            onClick={() => setIsCartPopupOpen(!isCartPopupOpen)}
+          >
             <FiShoppingBag size={24} />
             <div className="bg-primary rounded-full w-3.5 h-3.5 absolute -top-1 -right-1 text-[10px] text-white flex items-center justify-center">
               3
             </div>
           </div>
+
+          {isCartPopupOpen && <CartPopup />}
 
           <button className="md:hidden" onClick={() => setOpen(!open)}>
             {open ? <FiX size={24} /> : <FiMenu size={24} />}

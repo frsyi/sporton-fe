@@ -1,9 +1,8 @@
+import CardWithHeader from "../ui/card-with-header";
+
 const OrderInformation = () => {
   return (
-    <div className="bg-white">
-      <div className="px-5 py-4 border-b border-gray-200">
-        <h1 className="text-lg font-bold">Order Information</h1>
-      </div>
+    <CardWithHeader title="Order Information">
       <div className="p-5">
         <div className="input-group">
           <label htmlFor="full-name">Full Name</label>
@@ -26,7 +25,7 @@ const OrderInformation = () => {
           />
         </div>
       </div>
-    </div>
+    </CardWithHeader>
   );
 };
 

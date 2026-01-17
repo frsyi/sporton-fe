@@ -13,11 +13,11 @@ const Button = ({
   ...props
 }: TButtonProps) => {
   const baseStyle =
-    "inline-flex gap-2 items-center justify-center cursor-pointer hover:sclae-105";
+    "inline-flex gap-2 duration-300 items-center justify-center cursor-pointer hover:scale-105";
 
   const variants = {
     primary: "bg-primary text-white hover:bg-primary/85",
-    dark: "bg-black text-white hover:bg-black/85",
+    dark: "bg-dark text-white hover:bg-dark/85",
     ghost: "bg-transparent text-dark hover:bg-gray-100",
   };
 

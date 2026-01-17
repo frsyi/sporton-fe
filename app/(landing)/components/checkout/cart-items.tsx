@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button from "../ui/button";
 import { FiCreditCard, FiTrash2 } from "react-icons/fi";
 import priceFormatter from "@/app/utils/price-formatter";
+import CardWithHeader from "../ui/card-with-header";
 
 const CartItems = () => {
   const totalPrice = cartList.reduce(
@@ -11,11 +12,8 @@ const CartItems = () => {
   );
 
   return (
-    <div className="bg-white flex flex-col">
-      <div className="px-5 py-4 border-b border-gray-200">
-        <h1 className="text-lg font-bold">Cart Items</h1>
-      </div>
-      <div className="flex-1 overflow-auto  max-h-75">
+    <CardWithHeader title="Cart Items">
+      <div className="flex-1 overflow-auto max-h-75">
         {cartList.map((item, index) => (
           <div key={index} className="border-b border-gray-200 p-4 flex gap-3">
             <div className="bg-primary-light aspect-square w-16 flex justify-center items-center">
@@ -56,7 +54,7 @@ const CartItems = () => {
           Proceed to Payment
         </Button>
       </div>
-    </div>
+    </CardWithHeader>
   );
 };
 

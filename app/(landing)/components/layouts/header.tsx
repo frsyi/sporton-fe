@@ -13,12 +13,14 @@ const Header = () => {
   return (
     <header>
       <div className="container mx-auto flex items-center justify-between py-7 px-4 md:px-0">
-        <Image
-          src="/images/logo.svg"
-          alt="sporton logo"
-          width={127}
-          height={30}
-        />
+        <Link href="/">
+          <Image
+            src="/images/logo.svg"
+            alt="sporton logo"
+            width={127}
+            height={30}
+          />
+        </Link>
         <nav className="hidden md:flex gap-44 font-medium">
           <Link
             href="#"

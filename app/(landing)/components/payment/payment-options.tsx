@@ -5,17 +5,17 @@ const paymentList = [
   {
     bank_name: "BCA",
     account_number: 1234567890,
-    account_holder: "PT SportOn Digital",
+    account_holder: "PT SportsOn Digital",
   },
   {
     bank_name: "Mandiri",
     account_number: 9087654321,
-    account_holder: "PT SportOn Digital",
+    account_holder: "PT SportsOn Digital",
   },
   {
     bank_name: "BRI",
     account_number: 5647382910,
-    account_holder: "PT SportOn Digital",
+    account_holder: "PT SportsOn Digital",
   },
 ];
 
@@ -23,7 +23,7 @@ const PaymentOptions = () => {
   return (
     <CardWithHeader title="Payment Options">
       {paymentList.map((payment, index) => (
-        <div key={index} className="flex gap-5 p-5 border-gray-100">
+        <div key={index} className="flex gap-5 p-5 border-b border-gray-100">
           <div className="bg-blue-100 p-4 text-blue-500 h-fit self-center">
             <FiCreditCard size={24} />
           </div>

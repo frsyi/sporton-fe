@@ -47,7 +47,7 @@ const CartPopup = () => {
               width={63}
               height={63}
               className="aspect-square object-contain"
-            ></Image>
+            />
           </div>
           <div className="self-center">
             <div className="text-sm font-medium">{item.name}</div>

@@ -1,4 +1,4 @@
-import Button from "../../components/ui/button";
+import Button from "../ui/button";
 import Image from "next/image";
 import { FiFastForward } from "react-icons/fi";
 
@@ -10,7 +10,7 @@ const HeroSection = () => {
           src="/images/img-basketball.png"
           alt="image sporton"
           width={432}
-          height={432}
+          height={423}
           className="grayscale absolute left-0 -top-20"
         />
         <div className="relative ml-40 w-full">
@@ -40,7 +40,7 @@ const HeroSection = () => {
               Explore More <FiFastForward />
             </Button>
             <Button variant="ghost">
-              Watch Video{""}
+              Watch Video{" "}
               <Image
                 src="/images/icon-play-video.svg"
                 alt="icon play video"

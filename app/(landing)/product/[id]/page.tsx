@@ -15,7 +15,7 @@ const ProductDetail = () => {
         />
       </div>
       <div className="w-full py-7">
-        <h1 className="font-bold text-5xl mb-6">SportOn HyperSoccer v2</h1>
+        <h1 className="font-bold text-5xl mb-6">SportsOn HyperSoccer v2</h1>
         <div className="bg-primary-light rounded-full text-primary py-2 px-6 w-fit mb-5">
           Football
         </div>

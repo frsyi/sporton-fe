@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "../globals.css";
 import Header from "./components/layouts/header";
@@ -9,11 +9,6 @@ const poppins = Poppins({
   display: "swap",
   weight: ["400", "500", "600", "700", "800"],
 });
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-};
 
 export const metadata: Metadata = {
   title: "SportOn Website",

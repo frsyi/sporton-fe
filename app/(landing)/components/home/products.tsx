@@ -3,6 +3,8 @@ import Image from "next/image";
 import Button from "../ui/button";
 import { FiPlus } from "react-icons/fi";
 import priceFormatter from "@/app/utils/price-formatter";
+import { Product } from "@/app/types";
+import { getImageUrl } from "@/app/lib/api";
 
 const productList = [
   {
@@ -55,7 +57,11 @@ const productList = [
   },
 ];
 
-const ProductsSection = () => {
+type TProductsProps = {
+  products: Product[];
+};
+
+const ProductsSection = ({ products }: TProductsProps) => {
   return (
     <section id="products-section" className="container mx-auto mt-32 mb-52">
       <h2 className="font-bold italic text-4xl text-center mb-11">
@@ -63,15 +69,15 @@ const ProductsSection = () => {
       </h2>
 
       <div className="grid grid-cols-4 gap-5">
-        {productList.map((product, index) => (
+        {products.map((product) => (
           <Link
-            href={`/product/${product.name}`}
-            key={index}
+            href={`/product/${product._id}`}
+            key={product._id}
             className="p-1.5 bg-white hover:drop-shadow-xl duration-300"
           >
             <div className="bg-primary-light aspect-square w-full flex justify-center items-center relative">
               <Image
-                src={`/images/products/${product.imgUrl}`}
+                src={getImageUrl(product.imageUrl)}
                 alt={product.name}
                 width={300}
                 height={300}
@@ -83,7 +89,7 @@ const ProductsSection = () => {
             </div>
             <h3 className="font-medium text-lg mb-1.5 mt-4">{product.name}</h3>
             <div className="flex justify-between mb-8">
-              <div className="text-gray-500">{product.category}</div>
+              <div className="text-gray-500">{product.category.name}</div>
               <div className="font-medium text-primary">
                 {priceFormatter(product.price)}
               </div>

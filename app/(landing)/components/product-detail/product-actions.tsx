@@ -9,16 +9,26 @@ import {
 } from "react-icons/fi";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useCartStore } from "@/app/hooks/use-cart-store";
+import { Product } from "@/app/types";
 
 type TProductActionProps = {
+  product: Product;
   stock: number;
 };
 
-const ProductActions = ({ stock }: TProductActionProps) => {
+const ProductActions = ({ product, stock }: TProductActionProps) => {
+  const { addItem } = useCartStore();
   const { push } = useRouter();
   const [qty, setQty] = useState(1);
 
-  const checkout = () => {};
+  const handleAddToCart = () => {
+    addItem(product, qty);
+  };
+
+  const handleCheckout = () => {
+    push("/checkout");
+  };
 
   return (
     <div className="flex gap-5">
@@ -41,15 +51,11 @@ const ProductActions = ({ stock }: TProductActionProps) => {
           </button>
         </div>
       </div>
-      <Button className="px-20 w-full">
+      <Button className="px-20 w-full" onClick={handleAddToCart}>
         <FiShoppingBag size={24} />
         Add to Cart
       </Button>
-      <Button
-        variant="dark"
-        className="px-20 w-full"
-        onClick={() => push("/checkout")}
-      >
+      <Button variant="dark" className="px-20 w-full" onClick={handleCheckout}>
         Checkout Now
         <FiArrowRight size={24} />
       </Button>

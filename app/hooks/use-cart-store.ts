@@ -47,7 +47,7 @@ export const useCartStore = create<CartStore>()(
         set({ items: get().items.filter((item) => item._id !== productId) });
       },
       reset: () => {
-        // set({ items: [], customerInfo: null });
+        set({ items: [], customerInfo: null });
       },
     }),
     {

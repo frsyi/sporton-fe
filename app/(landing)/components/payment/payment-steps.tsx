@@ -8,10 +8,11 @@ import priceFormatter from "@/app/utils/price-formatter";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useCartStore } from "@/app/hooks/use-cart-store";
+import { transactionCheckout } from "@/app/services/transaction.service";
 
 const PaymentSteps = () => {
   const { push } = useRouter();
-  const { items, customerInfo } = useCartStore();
+  const { items, customerInfo, reset } = useCartStore();
   const [file, setFile] = useState<File | null>();
 
   const totalPrice = items.reduce(
@@ -23,7 +24,7 @@ const PaymentSteps = () => {
     push("/order-status/123");
   };
 
-  const handleConfirmPayment = () => {
+  const handleConfirmPayment = async () => {
     if (!file) {
       alert("Please upload your payment receipt");
       return;
@@ -51,6 +52,12 @@ const PaymentSteps = () => {
         )
       );
       formData.append("totalPayment", totalPrice!.toString());
+
+      const res = await transactionCheckout(formData);
+
+      alert("Transaction created successfully!");
+      reset();
+      push(`/order-status/${res._id}`);
     } catch (error) {
       console.log(error);
     }
@@ -89,7 +96,7 @@ const PaymentSteps = () => {
         <Button
           variant="dark"
           className="w-full mt-4"
-          onClick={uploadAndConfirm}
+          onClick={handleConfirmPayment}
         >
           <FiCheckCircle />
           Upload Receipt & Confirm

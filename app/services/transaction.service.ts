@@ -9,3 +9,7 @@ export const transactionCheckout = async (
     body: form,
   });
 };
+
+export const getTransactionById = async (id: string): Promise<Transaction> => {
+  return await fetchAPI<Transaction>(`/transactions/${id}`);
+};

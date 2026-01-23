@@ -4,11 +4,11 @@ import priceFormatter from "@/app/utils/price-formatter";
 import { getProductDetail } from "@/app/services/product.service";
 import { getImageUrl } from "@/app/lib/api";
 
-type TPagesProps = {
+export type TPageProps = {
   params: Promise<{ id: string }>;
 };
 
-const ProductDetail = async ({ params }: TPagesProps) => {
+const ProductDetail = async ({ params }: TPageProps) => {
   const { id } = await params;
 
   const product = await getProductDetail(id);
@@ -33,6 +33,7 @@ const ProductDetail = async ({ params }: TPagesProps) => {
         <div className="text-primary text-[32px] font-semibold mb-12">
           {priceFormatter(product.price)}
         </div>
+        <div className="mb-5">Stock Product : {product.stock}</div>
         <ProductActions product={product} stock={product.stock} />
       </div>
     </main>
